@@ -1,0 +1,6 @@
+<!--components/paoContainer/container.wxml-->
+<!-- <text>components/paoContainer/container.wxml</text> -->
+
+<view style="padding-top: {{navHeight}}px" class="pao_container">
+  <slot></slot>
+</view>

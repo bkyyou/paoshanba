@@ -1,0 +1,81 @@
+
+.common_title_1 {
+  color: #212a3d;
+  font-size: 36rpx;
+  /* font-weight: bold; */
+}
+text.common_title_1 {
+  color: #212a3d;
+  font-size: 36rpx;
+  /* font-weight: bold; */
+}
+.common_title_2 {
+  color: #212a3d;
+  font-size: 30rpx;
+  /* font-weight: bold; */
+}
+text.common_title_2 {
+  color: #212a3d;
+  font-size: 30rpx;
+  /* font-weight: bold; */
+}
+.common_title_3 {
+  color: #212a3d;
+  font-size: 28rpx;
+  /* font-weight: bold; */
+}
+.common_title_4 {
+  color: #212a3d;
+  font-size: 26rpx;
+  /* font-weight: 500; */
+}
+.common_title_5 {
+  color: #686e7a;
+  font-size: 28rpx;
+}
+.common_title_6 {
+  color: #686e7a;
+  font-size: 24rpx;
+}
+.common_text_b {
+  color: #686e7a;
+  font-size: 28rpx;
+}
+text.common_text_b {
+  color: #686e7a;
+  font-size: 28rpx;
+}
+text.common_text_b {
+  color: #686e7a;
+  font-size: 28rpx;
+}
+.common_text_s {
+  color: #686e7a;
+  font-size: 24rpx;
+}
+.common_text_label {
+  color: #212a3d;
+  font-size: 18rpx;
+}
+.common_text_des {
+  color: #686e7a;
+  font-size: 16rpx;
+}
+.common_button_b {
+  color: #FFFFFF;
+  font-size: 28rpx;
+}
+.common_button_s {
+  color: #FFFFFF;
+  font-size: 24rpx;
+}
+
+.common_container_padding {
+  padding-left: 36rpx;
+  padding-right: 36rpx;
+}
+
+.common_display_inline {
+  display: inline;
+}
+

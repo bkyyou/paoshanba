@@ -1,0 +1,22 @@
+<!--pages/teamDialogBox/teamDialogBox.wxml-->
+<!-- <text>pages/teamDialogBox/teamDialogBox.wxml</text> -->
+
+<view class="team_dialog_box_container">
+  <pao-header title="小队"></pao-header>
+
+  <view class="team_dialog_box_wrapper content">
+    <view class="dialog_list common_container_padding {{item.isMine ? 'is_mine' : ''}}" wx:for="{{allDialog}}">
+      <image src="{{item.imgUrl}}"></image>
+      <view class="r">
+        <view class="nick_name common_text_s">{{item.nickname}}</view>
+        <view class="txt common_text_b">{{item.txt}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="input_box common_container_padding">
+    <text bindtap="goHref" data-href="myTeam" class="iconfont icongeren3"></text>
+    <input type="text" placeholder="输入对话内容"></input>
+    <view class="send common_button_s">发送</view>
+  </view>
+</view>

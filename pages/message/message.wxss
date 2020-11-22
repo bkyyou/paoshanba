@@ -1,0 +1,93 @@
+/* pages/message/message.wxss */
+
+.message_wrapper {
+  padding-top: 38rpx;
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.l {
+  display: flex;
+  align-items: center;
+}
+
+.avator {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 20rpx;
+  position: relative;
+}
+
+.avator image {
+  width: 100%;
+  height: 100%;
+}
+
+.msg_box {
+  height: 32rpx;
+  /* line-height: 32rpx; */
+  display: flex;
+  align-items: center;
+  padding-left: 13rpx;
+  padding-right: 13rpx;
+  background-color: #ED4025;
+  border: 2rpx solid #FFFFFF;
+  border-radius: 16rpx;
+  position: absolute;
+  color: #FFFFFF;
+  right: -10rpx;
+  top: -10rpx;
+  box-sizing: border-box;
+}
+
+.iconchevron-right-outline {
+  color: var(--color_subtext);
+  font-size: 20rpx;
+}
+
+.last_news {
+  color: #686E7A;
+  margin-top: 1rpx;
+  font-weight: 400;
+}
+
+.line {
+  height: 16rpx;
+  background-color: var(--line_bg);
+  margin-bottom: 40rpx;
+}
+
+.last_messages .list {
+  /* display: flex; */
+}
+
+.last_messages .l {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 20rpx;
+}
+
+.last_messages image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.last_messages .r {
+  flex: 1;
+}
+.last_messages .r .r_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rpx;
+}
+
+.last_messages .msg {
+  font-weight: 400;
+  color: #686E7A;
+}

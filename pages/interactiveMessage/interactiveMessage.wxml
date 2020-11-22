@@ -1,0 +1,23 @@
+<!--pages/interactiveMessage/interactiveMessage.wxml-->
+<!-- <text>pages/interactiveMessage/interactiveMessage.wxml</text> -->
+
+<view class="interactive_message_contaiener">
+  <pao-header title="互动消息"></pao-header>
+
+  <view class="interactive_message_wrapper">
+    <view class="all_msg common_container_padding">
+      <view class="list" bindtap="goHref" data-href="commentDetail" wx:for="{{allNews}}" wx:key="index">
+        <view class="l">
+          <image src="{{item.imgUrl}}"></image>
+          <view class="comment_info">
+            <view class="nickname">{{item.nickname}}</view>
+            <view class="new_content common_text_b {{item.isLike ? 'like' : ''}}">{{item.content}}</view>
+            <view class="time common_text_s">{{item.time}}</view>
+          </view>
+        </view>
+        <view class="r"> {{item.aci_content}} </view>
+      </view>
+    </view>
+  </view>
+
+</view>

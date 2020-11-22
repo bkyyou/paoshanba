@@ -1,0 +1,43 @@
+<!--pages/publishDetail/publishDetail.wxml-->
+<!-- <text>pages/publishDetail/publishDetail.wxml</text> -->
+
+<view class="publish_detail_container">
+  <pao-header title="发布"></pao-header>
+
+  <view class="publish_detail_wrapper common_container_padding">
+    <view class="list">
+      <view class="common_title_2">希望人数</view>
+      <input type="text" class="int" placeholder-class="placeholder_common_title_2 common_title_2" placeholder="填写希望人数 >"></input>
+    </view>
+    <view class="list">
+      <view class="common_title_2">人均费用</view>
+      <input type="text" class="int" placeholder-class="placeholder_common_title_2 common_title_2" placeholder="填写人均费用 >"></input>
+    </view>
+    <view class="list">
+      <view class="common_title_2">费用方式</view>
+      <picker mode="selector" value="{{index}}" range="{{payType}}">
+        <view class="picker">
+        {{payType[index]}}
+        </view>
+      </picker>
+    </view>
+    <view class="list">
+      <view class="common_title_2">出发时间</view>
+      <picker class='alarm_picker' mode="multiSelector" value="{{dateTime}}" bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray}}">
+        <view class="picker">
+          {{dateTimeArray[0][dateTime[0]]}}-{{dateTimeArray[1][dateTime[1]]}}-{{dateTimeArray[2][dateTime[2]]}} {{dateTimeArray[3][dateTime[3]]}}:{{dateTimeArray[4][dateTime[4]]}}:{{dateTimeArray[5][dateTime[5]]}}
+        </view>
+      </picker>
+    </view>
+    <view class="list">
+      <view class="common_title_2">结束时间</view>
+      <picker class='alarm_picker' mode="multiSelector" value="{{dateTime}}" bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray}}">
+        <view class="picker">
+          {{dateTimeArray[0][dateTime[0]]}}-{{dateTimeArray[1][dateTime[1]]}}-{{dateTimeArray[2][dateTime[2]]}} {{dateTimeArray[3][dateTime[3]]}}:{{dateTimeArray[4][dateTime[4]]}}:{{dateTimeArray[5][dateTime[5]]}}
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="save common_button_b">保存</view>
+</view>

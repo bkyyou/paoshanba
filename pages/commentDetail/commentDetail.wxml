@@ -1,0 +1,158 @@
+<!--pages/commentDetail/commentDetail.wxml-->
+<!-- <text>pages/commentDetail/commentDetail.wxml</text> -->
+
+<view class="comment_detail_container">
+  <pao-header title="详情"></pao-header>
+
+  <view class="comment_detail_wrapper">
+    <view class="acivity_art">
+      <view class="comment_list common_container_padding" wx:for="{{myAcivity}}" wx:key="index">
+        <view class="avatar">
+          <image src="{{item.avatarUrl}}"></image>
+        </view>
+        <view class="comment_con">
+          <view class="nick_name">
+            <view class="common_title_4">{{item.nickname}}</view>
+            <!-- <view class="common_title_2 {{item.love ? 'comment_love' : ''}}"> 
+              <text class="iconfont common_title_2 common_display_inline {{item.love ? 'comment_love icondianzan' : 'iconshoucang'}}"></text> 
+              {{item.commentLoveNum}}
+            </view> -->
+          </view>
+          <view class="comment_txt common_title_3">{{item.commentTxt}}</view>
+          <view class="my_acivity">
+            <image src="{{item.acivityImgUrl}}"></image>
+            <view class="common_title_4">{{item.title}}</view>
+          </view>
+          <!-- <view class="common_text_b related_com">{{item.relatedCom}}</view> -->
+          <view class="comment_time common_text_s">
+            <view >
+              {{item.commentTime}} · 
+              <!-- <view 
+                data-commentReplyNum="{{item.commentReplyNum}}" 
+                data-index="{{index}}" 
+                bindtap="showCommentArea" 
+                class="comment_reply {{item.commentReplyNum > 0 ? 'comment_reply_box' : ''}} common_display_inline"
+              >
+                {{item.commentReplyNum ? item.commentReplyNum : ''}} 回复
+              </view> -->
+            </view>
+            <view hidden="{{item.commentReplyNum <= 0}}" data-index="{{index}}" class="comment_del" bindtap="delComment">删除</view>
+          </view>
+
+          <view class="related_peo">
+            <image wx:for="{{relatedPeo}}" wx:key="index" src="{{item.imgUrl}}" ></image>
+            <view class="common_text_s">{{relatedPeo.length}}  人{{relatedPeo.length > 4 ? '等' : ''}}赞过 > </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="line"></view>
+
+    <view class="comment_list common_container_padding" wx:for="{{myComment}}" wx:key="index">
+        <view class="avatar">
+          <image src="{{item.avatarUrl}}"></image>
+        </view>
+        <view class="comment_con">
+          <view class="nick_name">
+            <view class="common_title_4">{{item.nickname}}</view>
+            <view class="common_title_2 {{item.love ? 'comment_love' : ''}}"> 
+              <text class="iconfont common_title_2 common_display_inline {{item.love ? 'comment_love icondianzan' : 'iconshoucang'}}"></text> 
+              {{item.commentLoveNum}}
+            </view>
+          </view>
+          <view class="common_text_b related_com">{{item.relatedCom}}</view>
+          <view class="comment_txt common_title_3">{{item.commentTxt}}</view>
+          <view class="comment_time common_text_s">
+            <view >
+              {{item.commentTime}} · 
+              <view 
+                data-commentReplyNum="{{item.commentReplyNum}}" 
+                data-index="{{index}}" 
+                bindtap="showCommentArea" 
+                class="comment_reply {{item.commentReplyNum > 0 ? 'comment_reply_box' : ''}} common_display_inline"
+              >
+                {{item.commentReplyNum ? item.commentReplyNum : ''}} 回复
+              </view>
+            </view>
+            <view hidden="{{item.commentReplyNum <= 0}}" data-index="{{index}}" class="comment_del" bindtap="delComment">删除评论</view>
+          </view>
+        </view>
+    </view>
+
+    <view class="line"></view>
+
+    <view class="all_comment common_container_padding">
+      <view class="all_comment_header common_title_3">全部评论</view>
+      <!-- <view class="comment_list" wx:for="{{allComment}}" wx:key="index">
+        <view class="avatar">
+          <image src="{{item.avatarUrl}}"></image>
+        </view>
+        <view class="comment_con">
+          <view class="nick_name">
+            <view class="common_title_4">{{item.nickname}}</view>
+            <view class="common_title_2 {{item.love ? 'comment_love' : ''}}"> 
+              <text class="iconfont common_title_2 common_display_inline {{item.love ? 'comment_love icondianzan' : 'iconshoucang'}}"></text> 
+              {{item.commentLoveNum}}
+            </view>
+          </view>
+          <view class="comment_txt common_title_3">{{item.commentTxt}}</view>
+          <view class="comment_time common_text_s">
+            <view >
+              {{item.commentTime}} · 
+              <view 
+                data-commentReplyNum="{{item.commentReplyNum}}" 
+                data-index="{{index}}" 
+                bindtap="showCommentArea" 
+                class="comment_reply {{item.commentReplyNum > 0 ? 'comment_reply_box' : ''}} common_display_inline"
+              >
+                {{item.commentReplyNum ? item.commentReplyNum : ''}} 回复
+              </view>
+            </view>
+            <view hidden="{{item.commentReplyNum <= 0}}" data-index="{{index}}" class="comment_del" bindtap="delComment">删除评论</view>
+          </view>
+        </view>
+      </view> -->
+      <view class="comment_list common_container_padding" wx:for="{{allComment}}" wx:key="index">
+        <view class="avatar">
+          <image src="{{item.avatarUrl}}"></image>
+        </view>
+        <view class="comment_con">
+          <view class="nick_name">
+            <view class="common_title_4">{{item.nickname}}</view>
+            <view class="common_title_2 {{item.love ? 'comment_love' : ''}}"> 
+              <text class="iconfont common_title_2 common_display_inline {{item.love ? 'comment_love icondianzan' : 'iconshoucang'}}"></text> 
+              {{item.commentLoveNum}}
+            </view>
+          </view>
+          <view class="common_text_b related_com">{{item.relatedCom}}</view>
+          <view class="comment_txt common_title_3">{{item.commentTxt}}</view>
+          <view class="comment_time common_text_s">
+            <view >
+              {{item.commentTime}} · 
+              <view 
+                data-commentReplyNum="{{item.commentReplyNum}}" 
+                data-index="{{index}}" 
+                bindtap="showCommentArea" 
+                class="comment_reply {{item.commentReplyNum > 0 ? 'comment_reply_box' : ''}} common_display_inline"
+              >
+                {{item.commentReplyNum ? item.commentReplyNum : ''}} 回复
+              </view>
+            </view>
+            <view hidden="{{item.commentReplyNum <= 0}}" data-index="{{index}}" class="comment_del" bindtap="delComment">删除评论</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="comment common_container_padding">
+    <view class="comment_box">
+      <text class="iconfont iconbianji_2"></text>
+      <input  adjust-position="{{false}}" type="text" placeholder="输入评论内容"></input>
+    </view>
+    <!-- <text class="iconfont iconshoucang {{favorites}}"></text> -->
+    <text class="iconfont iconshoucang"></text>
+    <text class="iconfont iconzhuanfa_4"></text>
+  </view>
+</view>

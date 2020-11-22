@@ -1,0 +1,232 @@
+<!--pages/planDetail/planDetail.wxml-->
+<!-- <text>pages/planDetail/planDetail.wxml</text> -->
+<import src="../../template/acivityTem/acivityDes.wxml"></import>
+
+<view class="plan_detail_container">
+  <pao-header title="旅行计划详情"></pao-header>
+
+  <view class="content">
+
+    <view class="swiper_container">
+      <swiper class="swiper_1" indicator-dots="true" indicator-active-color="#fff" autoplay circular>
+        <swiper-item wx:for="{{banners}}" wx:key="index">
+          <image  mode="aspectFill" bindtap="tapBanner" data-url="{{item.linkUrl}}" src="{{item.picUrl}}" />
+        </swiper-item>
+      </swiper>
+    </view>
+
+    <view>
+      <view class="common_container_padding acivity_des">
+        <template is="acivityDes" data="{{item}}"></template>
+      </view>
+
+      <view class="common_container_padding">
+        <view class="curr_num common_title_4">
+          <view>
+            <view>希望人数</view>
+            <view class="num_box common_text_s"> <view class="num">{{item.hopePeopleNum}}</view>人</view>
+          </view>
+          <view>
+            <view>已报名</view>
+            <view class="num_box common_text_s"> <view class="num">{{item.singUpNum}}</view>人</view>
+          </view>
+          <view>
+            <view>人均预算</view>
+            <view class="num_box common_text_s"> <view class="num">{{item.everyMon}}</view>元</view>
+          </view>
+          <view>
+            <view>费用方式</view>
+            <view class="num_box common_text_s"> <view class="num">{{item.payType}}</view> </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="line"></view>
+
+    <view class="acitivity_plan common_container_padding">
+      <view class="acitivity_plan_item">
+        <text class="iconfont iconweizhi_2"></text>
+        <view class="start_loc_des">始发地</view>
+        <view class="start_loc loc"> {{ item.plan.startLoc }} </view>
+        <view class="distance"> {{ item.plan.distance }} </view>
+      </view>
+
+      <view class="acitivity_plan_item">
+        <text class="iconfont iconhuodong"></text>
+        <view class="start_loc_des">目的地</view>
+        <view class="start_loc loc"> {{ item.plan.target }} </view>
+      </view>
+
+      <view class="acitivity_plan_item">
+        <text class="iconfont iconshijian"></text>
+        <view class="start_loc_des">起止时间</view>
+        <view class="start_loc loc"> {{ item.plan.planTime }} </view>
+      </view>
+    </view>
+
+    <view class="line"></view>
+
+    <view class="pass_by common_container_padding">
+      <view class="padd_by_title common_title_2">途径地({{item.passBy.length}})</view>
+
+      <view class="pass_by_locs">
+        <view class="pass_by_item" wx:for="{{item.passBy}}" wx:key="idx"  wx:for-index="idx" wx:for-item="sub">
+          <view class="pass_by_tail" wx:if="{{item.passBy.length - 1 != idx}}"></view>
+          <view class="pass_by_node"></view>
+          <view class="pass_by_wrapper">
+            <view class="loc_name common_title_3">{{sub.locName}}</view>
+            <view class="loc_des common_title_4">{{sub.locDes}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="line"></view>
+
+    <view class="intention_box common_container_padding">
+      <view class="common_title_2 ">想约的(<view class="common_display_inline num_blue">{{relatedPers.manCount}}</view>男<view class="common_display_inline num_blue">{{relatedPers.womenCount}}</view>女）</view>
+      <view class="avatar_box avatar_box_line">
+        <image wx:for="{{relatedPers.avatarArr}}" src="{{item}}" wx:key="index"></image>
+      </view>
+    </view>
+
+    <view class="intention_box sign_up_box common_container_padding">
+      <view class="common_title_2 "><view class="common_display_inline num_blue">{{signUpPers.manCount + signUpPers.womenCount}}</view>人已报名(<view class="common_display_inline num_blue">{{signUpPers.manCount}}</view>男<view class="common_display_inline num_blue">{{signUpPers.womenCount}}</view>女）</view>
+      <view class="avatar_box">
+        <image wx:for="{{signUpPers.avatarArr}}" src="{{item}}" wx:key="index"></image>
+      </view>
+    </view>
+
+    <view class="line"></view>
+  </view>
+
+  <view class="all_comment common_container_padding">
+    <view class="all_comment_title common_title_1">评论(28)</view>
+    <view class="all_comment_box">
+      <view class="comment_list" wx:for="{{allComment}}" wx:key="index">
+        <view class="avatar">
+          <image src="{{item.avatarUrl}}"></image>
+        </view>
+        <view class="comment_con">
+          <view class="nick_name">
+            <view class="common_title_4">{{item.nickname}}</view>
+            <view class="common_title_2 {{item.love ? 'comment_love' : ''}}"> 
+              <text class="iconfont common_title_2 common_display_inline {{item.love ? 'comment_love icondianzan' : 'iconshoucang'}}"></text> 
+              {{item.commentLoveNum}}
+            </view>
+          </view>
+          <view class="comment_txt common_title_3">{{item.commentTxt}}</view>
+          <view class="comment_time common_text_s">
+            <view >
+              {{item.commentTime}} · 
+              <view 
+                data-commentReplyNum="{{item.commentReplyNum}}" 
+                data-index="{{index}}" 
+                bindtap="showCommentArea" 
+                class="comment_reply {{item.commentReplyNum > 0 ? 'comment_reply_box' : ''}} common_display_inline"
+              >
+                {{item.commentReplyNum ? item.commentReplyNum : ''}} 回复
+              </view>
+            </view>
+            <view hidden="{{item.commentReplyNum <= 0}}" data-index="{{index}}" class="comment_del" bindtap="delComment">删除评论</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="comment common_container_padding">
+    <view class="comment_box">
+      <text class="iconfont iconbianji_2"></text>
+      <input  adjust-position="{{false}}" type="text" placeholder="输入评论内容"></input>
+    </view>
+    <!-- <text class="iconfont iconshoucang {{favorites}}"></text> -->
+    <text class="iconfont iconshoucang"></text>
+    <text class="iconfont iconzhuanfa_4"></text>
+  </view>
+
+  <view class="comment_wrapper" hidden="{{commentFlag}}">
+    <view class="common_title_1 comment_wrapper_header">
+      <text class="iconfont iconcuo" data-close-page-name="commentFlag" bindtap="closeDia"></text>
+      <view>写评论</view>
+      <view class="publish_btn common_button_s">发布</view>
+    </view>
+    <view class="comment_area">
+      <!-- <textarea name="" id="" cols="30" rows="10"></textarea> -->
+      <textarea adjust-position="{{false}}" cols="30" rows="10" type="text" placeholder="有爱评论，说点儿好听的～"></textarea>
+    </view>
+  </view>
+
+  <view class="show_current_comment" hidden="{{showCurrentComFlag}}">
+    <view class="current_comment_header comment_wrapper_header" >
+      <text data-close-page-name="showCurrentComFlag" bindtap="closeDia" class="iconfont iconcuo"></text>
+      <view>{{currentAllComs.itemComs.length}}条回复</view>
+      <view></view>
+    </view>
+    <view class="common_container_padding comment_list_wrapper">
+
+      <view class="current_com_title common_text_b">全部评论</view>
+
+      <view class="comment_list " wx:for="{{currentAllComs.itemComs}}" wx:key="index">
+          <view class="avatar">
+            <image src="{{item.avatarUrl}}"></image>
+          </view>
+          <view class="comment_con">
+            <view class="nick_name">
+              <view class="common_title_4">{{item.nickname}}</view>
+              <view class="common_title_2 {{item.love ? 'comment_love' : ''}}"> 
+                <text class="iconfont common_title_2 common_display_inline {{item.love ? 'comment_love icondianzan' : 'iconshoucang'}}"></text> 
+                {{item.commentLoveNum}}
+              </view>
+            </view>
+            <view class="common_text_b related_com">{{item.relatedCom}}</view>
+            <view class="comment_txt common_title_3">{{item.commentTxt}}</view>
+            <view class="comment_time common_text_s">
+              <view >
+                {{item.commentTime}} · 
+                <view 
+                  data-commentReplyNum="{{item.commentReplyNum}}" 
+                  data-index="{{index}}" 
+                  bindtap="showCommentArea" 
+                  class="comment_reply {{item.commentReplyNum > 0 ? 'comment_reply_box' : ''}} common_display_inline"
+                >
+                  回复
+                </view>
+              </view>
+              <view hidden="{{item.commentReplyNum <= 0}}" data-index="{{index}}" class="comment_del" bindtap="delComment">删除评论</view>
+            </view>
+          </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="ability_wrapper" hidden="{{abilityFlag}}"> 
+    <view class="ability_box" >
+      <view class=" comment_wrapper_header" >
+        <text data-close-page-name="abilityFlag" bindtap="closeDia" class="iconfont iconcuo"></text>
+        <view>管理</view>
+        <view></view>
+      </view>
+      <view class="all_ability common_text_b common_container_padding">
+        <view data-href="myTeam" bindtap="goHref" class="all_ability_list">
+          <image src="/assets/imgs/team.png"></image>
+          <view>小队</view>
+        </view>
+        <view class="all_ability_list" bindtap="goHref" data-href="signUpList">
+          <image src="/assets/imgs/list.png"></image>
+          <view>报名列表</view>
+        </view>
+        <view class="all_ability_list">
+          <image src="/assets/imgs/edit.png"></image>
+          <view>编辑</view>
+        </view>
+        <view class="all_ability_list">
+          <image src="/assets/imgs/disband.png"></image>
+          <view>解散</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

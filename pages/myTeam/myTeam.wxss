@@ -1,0 +1,174 @@
+/* pages/myTeam/myTeam.wxss */
+
+.my_team_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.my_team_container .iconcheck-circle-fill {
+  color: rgba(42, 130, 250, 1);
+}
+
+.my_team_wrapper {
+  padding-top: 20rpx;
+  box-sizing: border-box;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.my_team_header {
+  padding-bottom: 24rpx;
+  border-bottom: 1px solid var(--line_bg);
+
+}
+
+.my_team_container text {
+  font-size: 28rpx;
+}
+
+.my_team_header .main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+/* 每个成员 */
+.all_peo {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 20rpx;
+}
+.peo_list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40rpx;
+}
+
+.peo_list .info {
+  display: flex;
+  /* justify-content: ; */
+  align-items: center; 
+}
+
+.info text {
+  margin-right: 30rpx;
+  font-size: 35rpx;
+  color: rgba(149, 156, 167, 1);
+}
+
+.info image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.att_status {
+  width: 164rpx;
+  height: 56rpx;
+  border-radius: 28rpx;
+  text-align: center;
+  line-height: 56rpx;
+  background-color: #cccccc;
+  color: #fff;
+}
+
+.no_att.att_status {
+  background-color: #FE2C55;
+}
+
+/* 全选 移出 */
+.manage_box {
+  width: 750rpx;
+  height: 98rpx;
+  background-color: #FFFFFF;
+  box-shadow: 0px 1px 0px 0px #D9D9D9;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  
+}
+.manage_box text {
+  font-size: 35rpx;
+  color: rgba(149, 156, 167, 1);
+}
+.all_choose {
+  display: flex;
+  align-items: center;
+}
+.all_choose view {
+  color: #686E7A;
+  margin-left: 24rpx;
+}
+.remove {
+  width: 164rpx;
+  height: 60rpx;
+  background-color: #2A82FA;
+  border-radius: 30rpx;
+  text-align: center;
+  line-height: 60rpx;
+  color: #FFFFFF;
+}
+
+/* 编辑小队名称 */
+.edit_team_name_box {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.edit_team_name_wrapper {
+  width: 540rpx;
+  /* height: 295rpx; */
+  background-color: #cccccc;
+  border-radius: 24rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding-top: 43rpx;
+}
+
+.edit_team_name_title{
+  margin-bottom: 50rpx;
+  text-align: center;
+}
+
+.edit_team_name_wrapper input {
+  width: 480rpx;
+  height: 50rpx;
+  /* margin-bottom: 24rpx; */
+  margin: 0 auto 24rpx;
+  border-radius: 10rpx;
+  border: 1px solid var(--line_bg);
+  padding: 5rpx;
+}
+
+.btn_box {
+  height: 80rpx;
+  border-top: 1px solid var(--line_bg);
+  display: flex;
+  line-height: 80rpx;
+  color: rgba(42, 130, 250, 1);
+}
+
+.btn_box view {
+  flex: 1;
+  text-align: center;
+}
+.btn_box view:first-child {
+  border-right: 1px solid var(--line_bg);
+}
+

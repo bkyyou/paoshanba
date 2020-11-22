@@ -1,0 +1,14 @@
+<!--pages/map/map.wxml-->
+<!-- <text>pages/map/map.wxml</text> -->
+
+<view class="map_container">
+  <pao-header title="地图"></pao-header>
+
+  <view class="map_wrapper">
+    <!-- <map class="my_map" name="" id="myMap"></map> -->
+    <map class='map my_map' id="myMap" longitude='{{longitude}}' latitude='{{latitude}}' scale='{{scale}}' markers='{{markers}}' controls="{{controls}}" bindcontroltap="bindcontroltap" polyline='{{polyline}}' circles="{{circles}}" bindmarkertap='bindmarkertap' bindcontroltap='bindcontroltap'
+    show-location></map>
+
+  </view>
+
+</view>

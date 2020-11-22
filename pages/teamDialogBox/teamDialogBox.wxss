@@ -1,0 +1,83 @@
+/* pages/teamDialogBox/teamDialogBox.wxss */
+.team_dialog_box_container {
+  width: 100%;
+  height: 100%;
+  background-color: #F4F4F4;
+  padding-bottom: 98rpx;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.dialog_list {
+  display: flex;
+  margin-bottom: 24rpx;
+}
+.dialog_list image{
+  margin-right: 20rpx;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+.is_mine image {
+  margin-right: 0;
+  margin-left: 20rpx;
+}
+.is_mine image {
+  order: 2;
+}
+.is_mine .r {
+  order: 1;
+}
+.is_mine .nick_name {
+  text-align: right;
+}
+.is_mine .txt {
+  color: #FFFFFF;
+  background-color: #2A82FA;
+}
+
+.nick_name {
+  margin-bottom: 10rpx;
+}
+
+.txt {
+  max-width: 510rpx;
+  background-color: #FFFFFF;
+  border-radius: 12rpx;
+  padding: 24rpx 20rpx;
+}
+
+
+/* 输入框 */
+.input_box {
+  width: 750rpx;
+  height: 98rpx;
+  background-color: #FFFFFF;
+  box-shadow: 0px 1px 0px 0px #D9D9D9;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.input_box input {
+  width: 502rpx;
+  height: 80rpx;
+  background-color: #F4F4F4;
+  border-radius: 40rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.send {
+  width: 88rpx;
+  height: 60rpx;
+  background-color: #2A82FA;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 60rpx;
+}

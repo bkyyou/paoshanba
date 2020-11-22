@@ -1,0 +1,90 @@
+/* template/acivityDes.wxss */
+
+.acitivity_content_list_header{
+  display: flex;
+  align-items: center;
+  position: relative;
+  /* margin-top: 20rpx; */
+  margin-bottom: 20rpx;
+}
+
+.acitivity_content_list_avatar{
+  width: 72rpx;
+  height: 72rpx;
+  background-color: skyblue;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 20rpx;
+}
+
+.sex_sign{
+  width: 24rpx;
+  height: 24rpx;
+  /* border: 2rpx solid #FFFFFF; */
+  position: absolute;
+  border-radius: 50%;
+  font-size: 20rpx;
+  right: -4rpx;
+  bottom: -4rpx;
+  background-color: #ffffff;
+  color: #2A82FA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sex_sign text {
+  font-size: 20rpx;
+}
+
+.acitivity_content_list_header .nickname {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #212A3D;
+}
+.acitivity_content_list_header .motorcycle_type{
+  font-size: 16rpx;
+  font-weight: 400;
+  color: #686E7A;
+}
+.acitivity_content_list_header .iconrenzheng{
+  font-size: 16rpx;
+  font-weight: 400;
+  color: #ECAE66;
+}
+
+.acitivity_content_list_header .time {
+  font-size: 24rpx;
+  font-weight: 400;
+  color: #686E7A;
+  position: absolute;
+  right: 0;
+  top: 11rpx;
+}
+.acitivity_content_list_header .sing_up {
+  width: 120rpx;
+  height: 60rpx;
+  background-color: #2A82FA;
+  border-radius: 30rpx;
+  position: absolute;
+  right: 0;
+  top: 11rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #ffffff;
+}
+
+.acitivity_content_list_content .acitivity_list_title{
+  font-size: 30rpx;
+  color: #212A3D;
+  font-weight: 500;
+  margin-bottom: 15rpx;
+}
+.acitivity_content_list_content .acitivity_list_des{   
+  font-size: 24rpx;
+  font-weight: 400;
+  color: #686E7A;
+  padding-bottom: 20rpx;
+  border-bottom: 2px solid #F8F8F8;
+  margin-bottom: 20rpx;
+}

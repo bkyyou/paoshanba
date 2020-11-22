@@ -1,0 +1,33 @@
+<!--pages/signUp/signUp.wxml-->
+<!-- <text>pages/signUp/signUp.wxml</text> -->
+
+<view class="sing_up_container" style="height: {{windowHeight}}px">
+  <pao-header title="报名"></pao-header>
+
+  <view class="sing_up_wrapper common_container_padding">
+    <view>
+      <view class="phone_box">
+        <input type="text" placeholder="填写电话(选填)"></input>
+      </view>
+      <view class="textarea_box common_text_s">
+        <textarea placeholder-class="common_text_s" adjust-position="{{false}}" cols="30" rows="10" type="text" placeholder="备注说明(选填)"></textarea>
+      </view>
+    </view>
+
+    <view>
+      <view class="btn common_button_b">报名</view>
+
+      <view class="des_box common_text_s">
+        <view class="des_title common_title_1">
+          官方提醒
+        </view>     
+        <view class="des">
+          为保障您的生命财产安全，请务必在跑山吧微信小程序聊天系统内沟通行程，并通过官方入口报名。请不要贪图便宜和陌生人的利益诱惑，私下通过微信等第三方平台私聊，以免上当受骗，造成其他损失。
+          在平台使用过程中，如收到彩票、赌博、酒托、饭托等骚扰信息，请马上举报，系统将做永久封号处理。
+        </view>          
+      </view>
+    </view>
+  </view>
+
+ 
+</view>

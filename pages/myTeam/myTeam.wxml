@@ -1,0 +1,56 @@
+<!--pages/myTeam/myTeam.wxml-->
+<!-- <text>pages/myTeam/myTeam.wxml</text> -->
+
+<view class="my_team_container">
+  <pao-header title="我的小队"></pao-header>
+
+  <view class="my_team_wrapper content">
+    <view class="my_team_header common_container_padding">
+      <view class="main">
+        <view class="team_name common_title_1" bindtap="show" data-show-dia="editTeamNameDia"> {{teamName}} </view>
+        <view class="team_manage common_text_b" bindtap="manageTeam"> <text class="iconfont iconshezhi_3"></text> 管理成员</view>
+      </view>
+      <view class="common_text_b">小队成员·{{teamMember.length}}人</view>
+    </view>
+
+    <view class="all_peo common_container_padding">
+      <view class="peo_list" wx:for="{{allPeo}}" wx:key="index">
+        <view class="info">
+          <text 
+            hidden="{{isManage}}" 
+            data-index="{{index}}" 
+            bindtap="choose" 
+            class="iconfont {{ manageTeamObj[index] ? 'iconcheck-circle-fill' : 'iconcheck-circle'}}">
+          </text>
+          <image src="{{item.imgUrl}}"></image>
+          <view class="common_title_2">{{item.username}}</view>
+        </view>
+        <view class="att_status common_text_b {{item.attentionStatus > 2 ? 'no_att' : ''}}">{{item.attentionTxt}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view hidden="{{isManage}}"  class="manage_box common_container_padding">
+    <view class="all_choose common_title_2" bindtap="chooseAll">
+      <text 
+        class="iconfont {{manageTeamArr.length >= allPeo.length? 'iconcheck-circle-fill' : 'iconcheck-circle'}}">
+      </text>
+      <view>全选</view>
+    </view>
+    <view class="common_title_4 remove">
+      移出({{manageTeamArr.length}})
+    </view>
+  </view>
+
+  <view class="edit_team_name_box" hidden="{{editTeamNameDia}}">
+    <view class="edit_team_name_wrapper">
+      <view class="edit_team_name_title common_title_1">编辑小队名称</view>
+      <input type="text"></input>
+      <view class="btn_box common_button_s">
+        <view>确定</view>
+        <view data-show-dia="editTeamNameDia" bindtap="hide">取消</view>
+      </view>
+    </view>
+  </view>
+
+</view>

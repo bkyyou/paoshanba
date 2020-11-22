@@ -1,0 +1,72 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/personalHomepage/personalHomepage",
+    "pages/editInfo/editInfo",
+    "pages/mine/mine",
+    "pages/message/message",
+    "pages/publishPath/publishPath",
+    "pages/map/map",
+    "pages/publish/publish",
+    "pages/teamDialogBox/teamDialogBox",
+    "pages/signUpList/signUpList",
+    "pages/myTeam/myTeam",
+    "pages/signUp/signUp",
+    "pages/planDetail/planDetail",
+    "pages/searchPage/searchPage",
+    "pages/logs/logs",
+    "pages/publishDetail/publishDetail",
+    "pages/publishSign/publishSign",
+    "pages/publishPrivacy/publishPrivacy",
+    "pages/fans/fans",
+    "pages/systemNotification/systemNotification",
+    "pages/interactiveMessage/interactiveMessage",
+    "pages/commentDetail/commentDetail",
+    "pages/editNickname/editNickname"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "usingComponents": {
+    "pao-header": "/components/paoHeader/header"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "旅行计划",
+        "iconPath": "assets/imgs/travel.png",
+        "selectedIconPath": "assets/imgs/travel_active.png"
+      },
+      {
+        "pagePath": "pages/publish/publish",
+        "text": "发布",
+        "iconPath": "assets/imgs/publish.png",
+        "selectedIconPath": "assets/imgs/publish_active.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "assets/imgs/msg.png",
+        "selectedIconPath": "assets/imgs/msg_active.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "assets/imgs/mine.png",
+        "selectedIconPath": "assets/imgs/mine_active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  }
+}

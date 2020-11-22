@@ -1,0 +1,56 @@
+<!--pages/publishPath/publishPath.wxml-->
+<!-- <text>pages/publishPath/publishPath.wxml</text> -->
+
+<view class="publish_path_container">
+  <pao-header title="发布"></pao-header>
+
+  <view class="publish_path_wrapper common_container_padding">
+    
+    <view class="loc_list">
+      <view class="loc_wrapper">
+        <view class="loc_box">
+          <view class="start common_text_label sign_txt">始</view>
+          <input type="text" placeholder-class="common_title_2 loc_des" class="common_title_2" placeholder="填写出发地"/>
+          <view class="coordinate">
+            <text class="iconfont icondingwei2 common_text_b"></text>
+            <view class="common_text_b">定位</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- <view class="loc_list_box"> -->
+    <view class="loc_list" wx:key="index" wx:for="{{throughTo}}">
+      <view class="loc_wrapper">
+        <view class="loc_box">
+          <text data-index="{{index}}" bindtap="delete" class="iconfont iconcuo delete"></text>
+          <view class="pass_by common_text_label sign_txt">经</view>
+          <input type="text" placeholder-class="common_title_2 loc_des" class="common_title_2" placeholder="{{'填写途经地' + (index + 1)}}"/>
+          <view class="coordinate">
+            <text class="iconfont icondingwei2 common_text_b"></text>
+            <view class="common_text_b">定位</view>
+          </view>
+        </view>
+        <view class="remark">
+          <input placeholder="输入备注(选填)" placeholder-class="common_text_b" class="common_text_b" type="text" />
+        </view>
+        <view bindtap="addThroughTo" class="add" hidden="{{throughTo.length != index + 1}}">
+          <text class="iconfont iconjia"></text>
+        </view>
+      </view>
+      
+    </view>
+    <!-- </view> -->
+    <view class="loc_list">
+      <view class="loc_wrapper">
+        <view class="loc_box">
+          <view class="end common_text_label sign_txt">终</view>
+          <input type="text" placeholder-class="common_title_2 loc_des" class="common_title_2" placeholder="填写出发地"/>
+          <view class="coordinate">
+            <text class="iconfont icondingwei2 common_text_b"></text>
+            <view class="common_text_b">定位</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

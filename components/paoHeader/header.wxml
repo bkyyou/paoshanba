@@ -1,0 +1,34 @@
+<!--components/header/header.wxml-->
+<!-- <text>components/header/header.wxml</text> -->
+
+<!-- <view class='nav' style='height:{{navHeight}}px; padding-top: {{statusBarHeight}}px; box-sizing: border-box;top: {{top}}px'> -->
+
+<view style="padding-top: {{navHeight}}px">
+  <view class='nav {{pageName == "personalHomepage" ? "bg" : "" }}' style='height:{{navHeight}}px; padding-top: {{statusBarHeight}}px; box-sizing: border-box;'>
+
+    <view class="search" wx:if="{{pageName == 'home'}}">
+      <view class="l">
+        <picker mode="selector" value="{{index}}" range="{{array}}">
+          <view class="picker">
+          {{array[index]}}
+          </view>
+        </picker>
+        <text class="iconfont iconchevron-down-outline"></text>
+      </view>
+      <view class="r" bindtap="goSearch">
+        <text class="iconfont iconsousuo"></text>
+        <view>晋阳湖公园</view>
+      </view>
+    </view>
+
+    <view class="search_wrapper {{ title ? 'title_wrapper' : ''}}" wx:else>
+      <text class="iconfont iconarrow-back-outline" bindtap="back"></text>
+      <view class="search_box" wx:if="{{pageName == 'searchPage'}}">
+        <text class="iconfont iconsousuo"></text>
+        <input type="text" placeholder="晋阳湖公园"></input>
+        <text class="iconfont iconclose-circle-fill close"></text>
+      </view>
+      <view wx:else class="common_title_1 title"> {{ title }} </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,45 @@
+<!--template/acivityDes.wxml-->
+<!-- <text>template/acivityDes.wxml</text> -->
+
+<template name="acivityDes">
+
+  <view class="acitivity_content_list_header">
+
+    <view class="acitivity_content_list_avatar">
+      <view class="sex_sign">
+        <text class="iconfont {{ item.sexIcon }}"></text>
+      </view>
+    </view>
+
+    <view>
+      <view class="nickname"> {{ item.nickname }} </view>
+      <view class="motorcycle_type" wx:if="{{isBoo(item.signUp)}}"> 
+        <text class="iconfont iconrenzheng"></text> 
+        {{item.motorcycleType}}
+      </view>
+      <view class="motorcycle_type" wx:else> 
+        {{item.time}} 
+      </view>
+    </view>
+
+    <view class="time" wx:if="{{isBoo(item.signUp)}}"> {{item.time}} </view>
+    <!-- todo 报名一个函数，取消报名一个函数，管理一个函数 item 新添字段 abilityFun ， callback 选加  -->
+    <view 
+      data-show-page-name="abilityFlag" 
+      data-acivity-id=""
+      data-href="signUp"
+      data-callback="{{item.callback}}"
+      bindtap="{{item.abilityFun}}"
+      class="sing_up common_text_b" 
+      wx:else
+    >
+      {{item.isMine ? '管理' : item.signUp ? '已报名' : '报名'}} 
+    </view>
+  </view>
+
+  <view class="acitivity_content_list_content">
+    <view class="acitivity_list_title"> {{ item.acitivityTitle }} </view>
+    <view class="acitivity_list_des"> {{ item.acitivityDes }} </view>
+  </view>
+
+</template>

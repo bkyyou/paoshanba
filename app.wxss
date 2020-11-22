@@ -1,0 +1,47 @@
+/**app.wxss**/
+.container {
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 80rpx 0; */
+  box-sizing: border-box;
+  /* width: 100%;
+  height: 100%;
+  padding: 0 20px; */
+} 
+
+page{
+  width: 100%;
+  height: 100%;
+  /* padding-top: 200rpx; */
+  --page_bg: #f8f8f8;
+  /* --content_bg: #ffffff; */
+  --content_bg: #ffffff;
+  
+  /* 
+    色彩 
+  */
+  /* 分割线 */
+  --line_bg: #F4F4F4;
+  --color_mian_txt_1: #212A3D; 
+  --color_mian_txt_2: ##686E7A; 
+  --color_subtext: #959CA7; 
+  /* 主色 */
+  --color_main_decorate: #2A82FA;
+  /* 辅色 */
+  --color_main_secondary_1: #FE7405; 
+  --color_main_secondary_2: #02D158; 
+  /* 点缀色 */
+  --color_main_embellishment: #FDC63D;
+  /* 警示 */
+  --color_main_warn: #FF6555; 
+}
+
+.content {
+  margin-top: 26rpx;
+}
+
+@import './weui/common.wxss';
+@import './assets/iconfont/iconfont.wxss';

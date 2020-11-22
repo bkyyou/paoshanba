@@ -1,0 +1,71 @@
+<!--pages/editInfo/editInfo.wxml-->
+<!-- <text>pages/editInfo/editInfo.wxml</text> -->
+
+<view class="edit_info_container">
+  <pao-header title="旅行计划详情"></pao-header>
+
+  <view class="edit_info_wrapper common_container_padding">
+
+    <view class="list common_title_2">
+      <view class="l">头像</view>
+      <view class="r">
+        <image src="{{perInfo.imgUrl}}"></image>
+        <text class="iconfont iconchevron-right-outline"></text>
+      </view>
+    </view>
+
+    <view class="list common_title_2">
+      <view class="l">昵称</view>
+      <view class="r" bindtap="goHref" data-href="editNickname">
+        <view>{{perInfo.nickname}}</view>
+        <text class="iconfont iconchevron-right-outline"></text>
+      </view>
+    </view>
+
+    <view class="list common_title_2">
+      <view class="l">生日</view>
+      <view class="r">
+        <!-- <view>{{perInfo.day}}</view> -->
+        <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+          <view class="picker">
+            {{date}}
+          </view>
+        </picker>
+        <text class="iconfont iconchevron-right-outline"></text>
+      </view>
+    </view>
+
+    <view class="list common_title_2">
+      <view class="l">性别</view>
+      <view class="r">
+        <!-- <view>{{perInfo.gender}}</view> -->
+        <picker mode="selector" bindchange="genderPickerChange" value="{{genderIndex}}" range="{{genderArr}}">
+          <view class="picker">
+          {{genderArr[genderIndex]}}
+          </view>
+        </picker>
+        <text class="iconfont iconchevron-right-outline"></text>
+      </view>
+    </view>
+
+    <view class="list common_title_2">
+      <view class="l">地区</view>
+      <view class="r">
+        <!-- <view>{{perInfo.}}</view> -->
+        <view>山西·太原</view>
+        <text class="iconfont iconchevron-right-outline"></text>
+      </view>
+    </view>
+
+    <view class="list common_title_2">
+      <view class="l">签名</view>
+      <view class="r">
+        <!-- <view>{{perInfo.}}</view> -->
+        <view>填写个性签名</view>
+        <text class="iconfont iconchevron-right-outline"></text>
+      </view>
+    </view>
+    
+  </view>
+
+</view>

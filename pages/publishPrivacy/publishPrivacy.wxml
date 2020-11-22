@@ -1,0 +1,18 @@
+<!--pages/publishPrivacy/publishPrivacy.wxml-->
+
+<view class="publish_privacy_container">
+  <pao-header title="发布"></pao-header>
+
+  <view class="publish_privacy_wrapper common_container_padding">
+    <view class="list">
+      <view class="common_title_2">满员是否可继续加入</view>
+      <switch style='zoom:.7;' checked="{{switch1Checked}}" bindchange="switch1Change" size="mini"/>
+    </view>
+    <view class="list">
+      <view class="common_title_2">报名是否需要审核</view>
+      <switch style='zoom:.7;' checked="{{switch1Checked}}" bindchange="switch1Change" size="mini"/>
+    </view>
+  </view>
+
+  <view class="save common_button_b">保存</view>
+</view>

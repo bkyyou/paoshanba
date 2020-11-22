@@ -1,0 +1,380 @@
+/* pages/planDetail/planDetail.wxss */
+
+@import '../../template/acivityTem/acivityDes.wxss';
+
+.num_blue {
+  color: #2A82FA;
+}
+
+.iconcuo {
+  font-size: 24rpx;
+}
+
+.plan_detail_container{
+  padding-bottom: 98rpx;
+}
+
+.swiper_container {
+  margin-bottom: 20rpx;
+}
+
+.swiper_container .swiper_1 {
+  width: 750rpx;
+  height: 562rpx;
+}
+.swiper_container .swiper_1 image{
+  width: 750rpx;
+  height: 562rpx;
+}
+
+.acivity_des{
+  margin-bottom: 30rpx;
+}
+
+.curr_num {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid var(--line_bg);
+}
+
+.curr_num > view view:first-child {
+  margin-bottom: 20rpx;
+}
+
+.num_box {
+  color: #FE7405;
+  /* display: flex;
+  flex: 1;
+  justify-content: center; */
+  /* align-items: flex-end; */
+}
+
+.num {
+  font-size: 56rpx;
+  /* font-family: DIN Alternate; */
+  font-weight: bold;
+  color: #2A82FA;
+  display: inline;
+}
+
+.line {
+  /* width: 750px; */
+  height: 16rpx;
+  background-color: #F4F4F4;
+  margin-bottom: 24rpx;
+}
+
+.acitivity_plan {
+  font-size: 26rpx;
+  font-weight: 400;
+  color: #686E7A;
+}
+.acitivity_plan .acitivity_plan_item{
+  display: flex;
+  margin-bottom: 24rpx;
+  align-items: center;
+}
+
+.acitivity_plan .acitivity_plan_item text{
+  font-size: 26rpx;
+  font-weight: 400;
+  color: #686E7A;
+}
+
+.acitivity_plan .acitivity_plan_item view, .acitivity_plan .acitivity_plan_item text{
+  margin-right: 16rpx;
+}
+.acitivity_plan .acitivity_plan_item .distance{
+  width: 121rpx;
+  height: 30rpx;
+  background-color: #FFFFFF;
+  border: 2rpx solid #2A82FA;
+  border-radius: 15rpx;
+  font-size: 18rpx;
+  font-weight: 400;
+  color: #2A82FA;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.acitivity_plan .acitivity_plan_item .loc{
+  font-size: 26rpx;
+  font-weight: 500;
+  color: #212A3D;
+}
+
+.pass_by .padd_by_title {
+  margin-bottom: 24rpx;
+}
+/* 途经地 */
+.pass_by_locs {
+  /* position: relative; */
+}
+.pass_by_item {
+  position: relative;
+  padding-bottom: 20rpx;
+}
+
+.pass_by_wrapper {
+  position: relative;
+  padding-left: 40rpx;
+  top: -7rpx;
+}
+
+.pass_by_tail {
+  position: absolute;
+  left: 8rpx;
+  height: 100%;
+  border-left: 2px dashed #DDEBFE;
+}
+
+.pass_by_node {
+  left: -1px;
+  width: 20rpx;
+  height: 20rpx;
+  background-color: #FFFFFF;
+  border: 4rpx solid #2A82FA;
+  border-radius: 50%;
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loc_name{
+  margin-bottom: 16rpx;
+}
+.loc_des {
+  color: #959CA7;
+}
+
+.intention_box {
+  /* border-bottom: 1px solid var(--line_bg);
+  padding-bottom: 24rpx; */
+  margin-bottom: 24rpx;
+}
+
+.sign_up_box {
+  margin-bottom: 0;
+}
+
+.avatar_box {
+  padding: 24rpx 0;
+}
+.avatar_box_line {
+  border-bottom: 1px solid var(--line_bg);
+}
+.avatar_box image{
+  width: 68rpx;
+  height: 68rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+
+/* 评论 */
+.all_comment {
+  padding-top: 24rpx;
+}
+.all_comment_title {
+  margin-bottom: 24rpx;
+}
+.comment_list{
+  display: flex;
+  margin-bottom: 48rpx;
+  /* justify-content: space-between; */
+}
+.comment_list image{
+  width: 68rpx;
+  height: 68rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.comment_con {
+  flex: 1;
+}
+.comment_list .nick_name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24rpx;
+}
+.comment_list .nick_name view:first-child{
+  color: #12488D;
+}
+.comment_txt {
+  margin-bottom: 24rpx;
+}
+.comment_love{
+  color: #FE2C55;
+}
+.comment_time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.comment_time view:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.comment_reply_box {
+  padding: 6rpx 17rpx;
+  background: #F4F4F4;
+  border-radius: 18px;
+}
+.comment_del {
+  color: #FF6555;
+}
+
+.comment {
+  height: 98rpx;
+  width: 750rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid var(--line_bg);
+}
+
+.comment text {
+  font-size: 30rpx;
+}
+
+.comment_box {
+  display: flex;
+  align-items: center;
+  background-color: #F4F4F4;
+  width: 514rpx;
+  height: 88rpx;
+  border-radius: 44rpx;
+  padding-left: 24rpx;
+}
+
+.comment input {
+  flex: 1;
+  margin-left: 12rpx;
+}
+
+.comment_wrapper {
+  width: 750rpx;
+  height: 326rpx;
+  background-color: #FFFFFF;
+  border-radius: 36px 36px 0px 0px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 3;
+  /* flex-direction: column; */
+}
+
+.comment_wrapper_header {
+  height: 107rpx;
+  width: 750rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 36rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--line_bg);
+  /* position: absolute; */
+}
+
+.publish_btn {
+  width: 88rpx;
+  height: 60rpx;
+  background: #2A82FA;
+  border-radius: 30rpx;
+  line-height: 60rpx;
+  text-align: center;
+}
+
+.comment_area {
+  padding: 30rpx 39rpx 10rpx;
+  width: 750rpx;
+  height: 217rpx;
+  /* flex: 1; */
+  box-sizing: border-box;
+}
+.comment_area textarea {
+  width: 100%;
+  height: 100%;
+}
+
+/* 展示当前评论 */
+.show_current_comment {
+  width: 750rpx;
+  height: 80%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #FFFFFF;
+  overflow: auto;
+  padding-top: 107rpx;
+  box-sizing: border-box;
+}
+
+.current_comment_header {
+  margin-bottom: 36rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.current_com_title {
+  margin-bottom: 37rpx;
+}
+
+.related_com{
+  padding: 16rpx 20rpx;
+  background-color: #F4F4F4;
+  border-radius: 18rpx;
+  margin-bottom: 20rpx;
+}
+
+.comment_list_wrapper {
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* 管理 */
+.ability_wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.ability_box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #FFFFFF;
+}
+.all_ability {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 100rpx;
+  padding-bottom: 100rpx;
+}
+.all_ability_list{
+  text-align: center;
+}
+.all_ability_list image {
+  width: 108rpx;
+  height: 108rpx;
+  margin-bottom: 26rpx;
+}

@@ -1,0 +1,13 @@
+<!--pages/editNickname/editNickname.wxml-->
+<!-- <text>pages/editNickname/editNickname.wxml</text> -->
+
+<view class="edit_nickname_container">
+  <pao-header title="修改昵称"></pao-header>
+
+  <view class="edit_nickname_wrapper">
+    <input placeholder="输入昵称" placeholder-class="place_int" class="int common_text_b" type="text" />
+
+    <view class="common_text_b btn">保存</view>
+  </view>
+
+</view>

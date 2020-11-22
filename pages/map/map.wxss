@@ -1,0 +1,17 @@
+/* pages/map/map.wxss */
+
+.map_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.map_wrapper {
+  flex: 1;
+}
+
+.my_map {
+  width: 100%;
+  height: 100%;
+}

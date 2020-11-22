@@ -1,0 +1,5 @@
+/* components/paoContainer/container.wxss */
+.pao_container{
+  width: 100%;
+  background-color: --page_bg;
+}

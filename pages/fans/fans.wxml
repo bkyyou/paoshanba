@@ -1,0 +1,21 @@
+<!--pages/fans/fans.wxml-->
+<!-- <text>pages/fans/fans.wxml</text> -->
+
+<view class="fans_container">
+  <pao-header title="消息"></pao-header>
+
+  <view class="fans_wrapper common_container_padding">
+    <view class="list" wx:for="{{allFans}}" wx:key="index">
+      <view class="l">
+        <image src="{{item.imgUrl}}"></image>
+      </view>
+      <view class="r">
+        <view class="r_header">
+          <view class="nickname common_title_2">{{item.nickname}}</view>
+          <view class="time common_text_s">{{item.time}}</view>
+        </view>
+        <view class="msg common_title_4">{{item.msg}}</view>
+      </view>
+    </view>
+  </view>
+</view>

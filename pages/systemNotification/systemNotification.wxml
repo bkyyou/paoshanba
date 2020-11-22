@@ -1,0 +1,29 @@
+<!--pages/systemNotification/systemNotification.wxml-->
+<!-- <text>pages/systemNotification/systemNotification.wxml</text> -->
+
+<view class="system_notification_container">
+  <pao-header title="系统通知"></pao-header>
+
+  <view class="system_notification_wrapper common_container_padding">
+    <view class="information" wx:for="{{allInformations}}" :wx:key="index">
+      <view class="information_header">
+        <view class="title common_title_2">{{item.title}}</view>
+        <view class="time">{{item.time}}</view>
+      </view>
+      <view wx:if="{{item.type == 1 || item.type == 2}}">
+        <view class="common_text_s information_content">{{item.infoCon}}</view>
+      </view>
+      <view wx:if="{{item.type == 3}}">
+        <view class="common_text_s information_content information_content_2">{{item.infoCon}}</view>
+        <view class="common_text_s ability_btn"> <view>重新认证</view> </view>
+      </view>
+      <view class="common_text_s" wx:if="{{item.type == 4}}">
+        <view class="mb name">{{item.name}}</view>
+        <view class="mb phone">{{item.phone}}</view>
+        <view class="information_content information_content_2">{{item.infoCon}}</view>
+        <view class="ability_btn"> <view>去审核</view> </view>
+      </view>
+    </view>
+    
+  </view>
+</view>

@@ -1,0 +1,60 @@
+<!--pages/personalHomepage/personalHomepage.wxml-->
+<!-- <text>pages/personalHomepage/personalHomepage.wxml</text> -->
+
+<view class="personal_homepage_container">
+  <pao-header backData="{{backData}}" title="" pageName="personalHomepage"></pao-header>
+
+  <view class="personal_homepage_wrapper">
+    <image class="personal_homepage_bg" src="../../assets/imgs/per_homepage_bg.png"></image>
+
+    <view class="personal_homepage_content">
+      <view class="personal_homepage_header common_container_padding">
+        <view class="avator_box">
+          <image class="avator" src="{{personInfo.imgUrl}}"></image>
+        </view>
+
+        <view class="ability">
+          <view class="att abi">
+            <text class="iconfont iconjia"></text>
+            <view>关注</view>
+          </view>
+          <view class="communi abi">
+            <view>聊天</view>
+          </view>
+        </view>
+
+        <view class="msg">
+          <view class="nickname">{{personInfo.nickname}}</view>
+
+          <view class="authentication">
+            <text class="iconfont iconrenzheng"></text>
+            <view class="authent_info">{{personInfo.authentInfo}}</view>
+          </view>
+
+          <view class="sign common_text_s">{{personInfo.sign}}</view>
+
+          <view class="num">
+            <view class="fans_count">
+              <view>{{personInfo.fansCount}}</view>
+              <view>粉丝</view>
+            </view>
+            <view class="fans_count">
+              <view>{{personInfo.attCount}}</view>
+              <view>关注</view>
+            </view>
+            <view class="fans_count">
+              <view>{{personInfo.planCount}}</view>
+              <view>发布的计划</view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="line"></view>
+
+
+      
+    </view>
+  </view>
+
+</view>

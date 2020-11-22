@@ -1,0 +1,38 @@
+/* pages/fans/fans.wxss */
+
+.fans_wrapper {
+  padding-top: 38rpx;
+}
+
+.fans_wrapper .list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.fans_wrapper .l {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 20rpx;
+}
+
+.fans_wrapper image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.fans_wrapper .r {
+  flex: 1;
+}
+.fans_wrapper .r .r_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rpx;
+}
+
+.fans_wrapper .msg {
+  font-weight: 400;
+  color: #686E7A;
+}

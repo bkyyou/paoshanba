@@ -1,0 +1,79 @@
+<!--pages/searchPage/searchPage.wxml-->
+<!-- <text>pages/searchPage/searchPage.wxml</text> -->
+<import src="../../template/acivityTem/acivityDes.wxml"></import>
+
+<view>
+  <pao-header id="paoHeader" pageName="searchPage"></pao-header>
+
+  <view class="content">
+
+    <view wx:if="{{flag}}" class="common_container_padding">
+      <view class="search_his">
+        <view class="title_1">搜索历史</view>
+        <text class="iconfont icontrash--outline"></text>
+      </view>
+
+      <view class="item_box">
+        <view class="item" wx:for="{{searchHistory}}"> {{item}} </view>
+        <text class="iconfont iconchevron-down-outline item"></text>
+      </view>
+
+      <view class="line"></view>
+
+      <view class="search_his">
+        <view class="title_1">热门目的地</view>
+      </view>
+
+      <view class="item_box">
+        <view class="item" wx:for="{{searchHistory}}"> {{item}} </view>
+      </view>
+    </view>
+
+    <view class="search_res" wx:else>
+      <view class="search_page_nav">
+        <view bindtap="toggleNav" data-nav="plan" class="{{active == 'plan' ? 'active' : ''}}">计划</view>
+        <view bindtap="toggleNav" data-nav="user" class="{{active == 'user' ? 'active' : ''}}">用户</view>
+      </view>
+
+      <!-- <view class="acitivity_content_list_header">
+        <view class="acitivity_content_list_avatar">
+          <view class="sex_sign"></view>
+        </view>
+        <view>
+          <view class="nickname"> {{ item.nickname }} </view>
+          <view class="motorcycle_type"> 
+            <text class="iconfont iconrenzheng"></text> 
+            {{item.motorcycleType}} 
+          </view>
+        </view>
+        <view class="time"> {{item.time}} </view>
+      </view> -->
+
+      <view class="common_container_padding" hidden="{{active != 'plan'}}">
+        <view wx:for="{{allAcivities}}" wx:key="index">
+          <template is="acivityDes" data="{{item}}"></template>
+        </view>
+      </view>
+
+      <view class="common_container_padding all_users" hidden="{{active != 'user'}}">
+        <view wx:for="{{allUsers}}" class="user_list" wx:key="index">
+          <view class="user_des_box">
+            <view class="avatar"></view>
+            <view class="user_des common_text_s">
+              <view class="common_title_4 user_name"> {{ item.userName }} </view>
+              <view class="fans_count"> 粉丝：{{ item.fansCount }} </view>
+              <view> {{ item.signature }} </view>
+            </view>
+          </view>
+          <view data-index="{{index}}" 
+                class="attention_status {{item.attentionStatus ? 'hasAttention' : 'noAttention'}}" data-attention="{{item.attentionStatus}}"
+                bindtap="goAttention"> 
+            {{ item.attentionStatus ? '关注' : '已关注' }} 
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>
+

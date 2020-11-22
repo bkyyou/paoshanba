@@ -1,0 +1,33 @@
+<!--pages/signUpList/signUpList.wxml-->
+<!-- <text>pages/signUpList/signUpList.wxml</text> -->
+
+<view class="sign_up_list_container container">
+  <pao-header title="报名列表"></pao-header>
+
+  <view class="sign_up_list_wrapper content">
+    <view class="sign_up_list_header common_title_1">
+      <view bindtap="toggle" data-status="1" class="{{status == 1 ? 'active' : ''}}">审核中</view>
+      <view bindtap="toggle" data-status="2" class="{{status == 2 ? 'active' : ''}}">已拒绝</view>
+    </view>
+
+    <view class="sign_up_list_content common_container_padding">
+      <view class="item" wx:for="{{currentPeo}}">
+        <!-- <view> -->
+        <image src="{{item.imgUrl}}"></image>
+        <!-- </view> -->
+        <view class="r">
+          <view class="header">
+            <view class="username common_title_2">{{item.username}}</view>
+            <view class="common_text_s">{{item.time}}</view>
+          </view>
+          <view class="phone common_title_4">电话：{{item.phone}}</view>
+          <view class="des common_text_s">{{item.des}}</view>
+          <view class="ability_box common_text_s" hidden="{{status == 2}}">
+            <view data-index="{{index}}">通过</view>
+            <view data-index="{{index}}">拒绝</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

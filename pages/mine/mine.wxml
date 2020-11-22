@@ -1,0 +1,86 @@
+<!--pages/mine/mine.wxml-->
+<!-- <text>pages/mine/mine.wxml</text> -->
+
+<view class="mine_container">
+  
+  <view class="mine_wrapper">
+    <view class="mine_header common_container_padding">
+      <view class="pri">
+        <view class="l">
+          <view class="nickname">{{mineData.nickname}}</view>
+          <view bindtap="goHref" data-href="personalHomepage" class="common_text_b">我的个人主页></view>
+        </view>
+        <view class="r">
+          <image src="{{mineData.imgUrl}}"></image>
+          <view class="edit_box" bindtap="goHref" data-href="editInfo">
+            <text class="iconfont iconbianji_2"></text>
+          </view>
+        </view>
+      </view>
+
+      <view class="all_data">
+        <view class="list">
+          <view>{{mineData.fansCount}}</view>
+          <view class="common_title_4">粉丝</view>
+        </view>
+        <view class="list">
+          <view>{{mineData.att}}</view>
+          <view class="common_title_4">关注</view>
+        </view>
+        <view class="list">
+          <view>{{mineData.collect}}</view>
+          <view class="common_title_4">粉丝</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="item_con common_container_padding">
+      <view class="list">
+        <view class="l">
+          <image src="../../assets/imgs/lvxingjihua.png"></image>
+          <view class="common_title_2">旅行计划</view>
+        </view>
+        <view class="r">
+          <text class="iconfont iconchevron-right-outline"></text>
+        </view>
+      </view>
+      <view class="list">
+        <view class="l">
+          <image src="../../assets/imgs/cheliangrenzheng.png"></image>
+          <view class="common_title_2">车辆认证</view>
+        </view>
+        <view class="r">
+          <text class="iconfont iconchevron-right-outline"></text>
+        </view>
+      </view>
+      <view class="list no_p_b">
+        <view class="l">
+          <image src="../../assets/imgs/yijianfankui.png"></image>
+          <view class="common_title_2">意见反馈</view>
+        </view>
+        <view class="r">
+          <text class="iconfont iconchevron-right-outline"></text>
+        </view>
+      </view>
+      <view class="list no_p_b">
+        <view class="l">
+          <image src="../../assets/imgs/yinsishezhi.png"></image>
+          <view class="common_title_2">隐私设置</view>
+        </view>
+        <view class="r">
+          <text class="iconfont iconchevron-right-outline"></text>
+        </view>
+      </view>
+      <view class="list">
+        <view class="l">
+          <image src="../../assets/imgs/about_us.png"></image>
+          <view class="common_title_2">关于我们</view>
+        </view>
+        <view class="r">
+          <text class="iconfont iconchevron-right-outline"></text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

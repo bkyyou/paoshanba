@@ -1,0 +1,34 @@
+<!--pages/signs/signs.wxml-->
+<!-- <text>pages/signs/signs.wxml</text> -->
+
+<view class="signs_container">
+  <pao-header title="发布计划"></pao-header>
+
+  <view class="signs_wrapper common_container_padding">
+   <view class="signs_header">
+    <view class="signs_title common_title_3" >自定义标签</view>
+    <view class="sign common_text_s custom_tag" style="line-height:24rpx" bindtap="show" data-show-dia="customTagDia"> 
+      <text class="iconfont iconjia"></text> 
+      <view>自定义标签</view>
+    </view>
+   </view>
+
+   <view class="all_signs_box">
+     <view class="choose_sign common_text_b">选择标签</view>
+    <view class="all_signs">
+      <view bindtap="chooseSign" data-id="{{item.id}}" class="common_text_s sign {{allSignsObj[item.id] ? 'acitve' : ''}}" wx:for="{{allSignsArr}}">{{item.loc}}</view>
+    </view>
+   </view>
+  </view>
+
+  <view class="edit_team_name_box" hidden="{{customTagDia}}">
+    <view class="edit_team_name_wrapper">
+      <view class="edit_team_name_title common_title_1">自定义标签名称</view>
+      <input type="text"></input>
+      <view class="btn_box common_button_s">
+        <view>确定</view>
+        <view data-show-dia="customTagDia" bindtap="hide">取消</view>
+      </view>
+    </view>
+  </view>
+</view>

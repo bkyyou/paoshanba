@@ -1,0 +1,31 @@
+/* pages/editInfo/editInfo.wxss */
+
+.edit_info_wrapper {
+  padding-top: 38rpx;
+}
+
+.edit_info_wrapper .list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 36rpx;
+  margin-bottom: 35rpx;
+  border-bottom: 1px solid var(--line_bg);
+}
+
+.edit_info_wrapper .list view:last-child {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  color: #686E7A;
+}
+.edit_info_wrapper .list view:last-child image{
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+}
+.edit_info_wrapper .list view:last-child text{
+  font-size: 20rpx;
+  color: #686E7A;
+  margin-left: 16rpx;
+}

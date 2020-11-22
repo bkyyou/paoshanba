@@ -1,0 +1,111 @@
+<!--index.wxml-->
+
+<view>
+  <pao-header pageName="home"></pao-header>
+  <!--正文-->   
+  <view class="content">
+
+    <view class="swiper_container common_container_padding">
+      <swiper class="swiper_1" indicator-dots="true" indicator-active-color="#fff" autoplay circular>
+        <swiper-item wx:for="{{banners}}" wx:key="index">
+          <image  mode="aspectFill" bindtap="tapBanner" data-url="{{item.linkUrl}}" src="{{item.picUrl}}" />
+        </swiper-item>
+      </swiper>
+    </view>
+
+    <view class="all_activity">
+      <view class="aciviety_nav common_container_padding">
+        <view data-page="last" class="{{currentPage == 'last' ? 'active' : ''}}" bindtap="togglePage">最新</view>
+        <view data-page="hot" class="{{currentPage == 'hot' ? 'active' : ''}}" bindtap="togglePage">热门</view>
+        <view data-page="nearby" class="{{currentPage == 'nearby' ? 'active' : ''}}" bindtap="togglePage">附近</view>
+      </view>
+
+      <view class="acitivity_content">
+
+        <view data-href="planDetail" bindtap="goPlanDetail" data-id="index" class="acitivity_content_list common_container_padding" wx:for="{{allActivity}}" wx:key="key">
+
+          <view class="acitivity_content_list_header">
+
+            <view class="acitivity_content_list_avatar">
+              <!-- <image></image> -->
+              <view class="sex_sign"></view>
+            </view>
+
+            <view>
+              <view class="nickname"> {{ item.nickname }} </view>
+              <view class="motorcycle_type"> 
+                <text class="iconfont iconrenzheng"></text> 
+                {{item.motorcycleType}} 
+              </view>
+            </view>
+
+            <view class="time"> {{item.time}} </view>
+          </view>
+
+          <view class="acitivity_content_list_content">
+            <view class="acitivity_list_title"> {{ item.acitivityTitle }} </view>
+            <view class="acitivity_list_des"> {{ item.acitivityDes }} </view>
+
+            <view class="acitivity_plan">
+              <view class="acitivity_plan_item">
+                <text class="iconfont iconweizhi_2"></text>
+                <view class="start_loc_des">始发地</view>
+                <view class="start_loc loc"> {{ item.plan.startLoc }} </view>
+                <view class="distance"> {{ item.plan.distance }} </view>
+              </view>
+
+              <view class="acitivity_plan_item">
+                <text class="iconfont iconhuodong"></text>
+                <view class="start_loc_des">目的地</view>
+                <view class="start_loc loc"> {{ item.plan.target }} </view>
+              </view>
+              
+              <view class="acitivity_plan_item">
+                <text class="iconfont iconlianjie"></text>
+                <view class="start_loc_des">途径地</view>
+                <view class="start_loc loc"> {{ item.plan.passBy }} </view>
+              </view>
+
+              <view class="acitivity_plan_item">
+                <text class="iconfont iconshijian"></text>
+                <view class="start_loc_des">起止时间</view>
+                <view class="start_loc loc"> {{ item.plan.planTime }} </view>
+              </view>
+            </view>
+
+            <view class="acitivity_pics">
+              <image wx:for-index="idx" wx:for-item="sub" wx:for="{{item.acitivityPics}}" src="{{ sub }}" wx:key="idx"></image>
+            </view>
+
+            <view class="acitivity_signs" >
+              <view wx:for-index="idx" wx:for-item="sub" wx:for="{{item.acitivitySigns}}" wx:key="idx"> {{sub}} </view>
+            </view> 
+
+            <view class="acitivity_features">
+              <view>
+                <!-- <view></view> -->
+                <text class="iconfont iconshoucang"></text>
+                <view> {{ goodCount }} </view>
+              </view>
+              <view>
+                <text class="iconfont iconpinglun_2"></text>
+                <view> {{ commentCount }} </view>
+              </view>
+              <view>
+                <text class="iconfont iconzhuanfa_4"></text>
+                <!-- <button open-type='share'></button> -->
+                <view>分享</view>
+              </view>
+            </view>
+          </view>
+
+        </view>
+
+      </view>
+    </view>
+  </view>
+   
+  <!-- </view> -->
+
+</view>
+

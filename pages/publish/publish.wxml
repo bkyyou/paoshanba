@@ -1,0 +1,42 @@
+<!--pages/publish/publish.wxml-->
+<!-- <text>pages/publish/publish.wxml</text> -->
+<view class="publish_container">
+  <pao-header title="发布"></pao-header>
+
+  <view class="publish_wrapper common_container_padding">
+    <view class="upload_box">
+      <button class="upload_btn" bindtap='chooseImageTap'>
+        <text class="iconfont iconjia"></text>
+      </button>
+    </view>
+
+    <view class="txt">
+      <input class="common_title_1 title" placeholder-class="common_title_1 placeholder_title" placeholder="输入标题" type="text"></input>
+      <textarea class="common_text_b" placeholder-class="common_text_b placeholder_textarea" placeholder="输入正文" id="" cols="30" rows="10"></textarea>
+    </view>
+  </view>
+
+  <view style="bottom: {{bottom}}px" class="item_info common_container_padding">
+    <view class="l">
+      <view class="list" bindtap="goHref" data-href="publishDetail">
+        <text class="common_text_b iconfont iconproduct-fill"></text>
+        <view class="common_text_b">详情</view>
+      </view>
+      <view class="list" bindtap="goHref" data-href="publishPath">
+        <text class="common_text_b iconfont iconditu"></text>
+        <view class="common_text_b">行程</view>
+      </view>
+      <view class="list" bindtap="goHref" data-href="publishSign">
+        <text class="common_text_b iconfont iconbiaoqian"></text>
+        <view class="common_text_b">标签</view>
+      </view>
+      <view class="list" bindtap="goHref" data-href="publishPrivacy">
+        <text class="common_text_b iconfont iconyinsi"></text>
+        <view class="common_text_b">隐私</view>
+      </view>
+     
+    </view>
+    <view bindtap="show" class="r common_text_b">发布</view>
+  </view>
+
+</view>
